@@ -6,7 +6,7 @@ name: GitHub520
 on:
   push:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 6 * * *'
 
 jobs:
   build:
@@ -14,38 +14,60 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.7]
+        python-version: [3.9]
 
     steps:
     - uses: actions/checkout@v2
+    
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+        
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: update readme
-      env:
-        gitee_token: ${{ secrets.GITEE_TOKEN }}
-        gitee_gist_id: ${{ secrets.GITEE_GIST_ID }}
-        gitee_gist_file_name: ${{ secrets.GITEE_GIST_FILE_NAME }}
+        
+    - name: update hosts and readme
       run: |
         # fetch new ip content and update readme file
         python fetch_ips.py
+        
     - name: commit
       id: commit
       run: |
-        git config --global user.email sunxuebangong@gmail.com
-        git config --global user.name action_bot
+        git config --global user.email ${{ secrets.GITEMAIL }}
+        git config --global user.name ${{ secrets.GITNAME }}
         git add .
-        git commit -m "update readme content"
+        git commit -m "update hosts and readme"
       continue-on-error: true
+      
     - name: Check on failures
       if: steps.commit.outputs.status == 'failure'
       run: exit 1
+
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
+        
+# 传送hosts文件到私人服务器； 
+    - name: put hosts to private
+      uses: wlixcc/SFTP-Deploy-Action@v1.0
+      with:
+        username: ${{ secrets.USERNAME }} 
+        server: ${{ secrets.UPTARGET }} 
+        port: '28015'
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+        local_path: './*.txt'
+        remote_path: ${{ secrets.UPPATH }} 
+        args: '-o ConnectTimeout=15'
+        
+    # 删除无用 workflow runs;
+    - name: Delete workflow runs
+      uses: GitRML/delete-workflow-runs@main
+      with:
+        retain_days: 0.1
+        keep_minimum_runs: 1
