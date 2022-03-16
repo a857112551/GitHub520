@@ -35,8 +35,10 @@ jobs:
         python fetch_ips.py
         
     - name: cpfiles
-      run: cpfile.sh
       shell: bash
+      run: |
+          mkdir public
+      
         
     - name: commit
       id: commit
