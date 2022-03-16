@@ -35,10 +35,8 @@ jobs:
         python fetch_ips.py
         
     - name: cpfiles
-      run: |
-        mkdir public
-        cp hosts /public/hosts.txt
-        cp hosts.json /public/hosts.json
+      run: cpfile.sh
+      shell: bash
         
     - name: commit
       id: commit
