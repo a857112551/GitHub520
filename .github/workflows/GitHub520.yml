@@ -65,7 +65,7 @@ jobs:
         server: ${{ secrets.UPTARGET }} 
         port: '28015'
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
-        local_path: './*.txt'
+        local_path: './public/*.txt'
         remote_path: ${{ secrets.UPPATH }} 
         args: '-o ConnectTimeout=15'
         
