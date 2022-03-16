@@ -34,6 +34,10 @@ jobs:
         # fetch new ip content and update readme file
         python fetch_ips.py
         
+    - name: cpfiles
+      run: |
+        sh cpfile.sh
+        
     - name: commit
       id: commit
       run: |
