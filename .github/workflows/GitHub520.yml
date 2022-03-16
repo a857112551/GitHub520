@@ -39,6 +39,7 @@ jobs:
       run: |
           if [ ! -d "public" ]; then
              mkdir -p public
+          fi
           cp hosts public/hosts.txt
           cp hosts.json public/hosts.json
         
