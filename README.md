@@ -26,10 +26,10 @@
 ### 2.1 复制下面的内容
 ```bash
 # GitHub520 Host Start
-140.82.112.26                 alive.github.com
-140.82.112.26                 live.github.com
+140.82.114.26                 alive.github.com
+140.82.113.25                 live.github.com
 185.199.108.154               github.githubassets.com
-140.82.114.21                 central.github.com
+140.82.112.21                 central.github.com
 185.199.108.133               desktop.githubusercontent.com
 185.199.108.153               assets-cdn.github.com
 185.199.108.133               camo.githubusercontent.com
@@ -37,7 +37,7 @@
 199.232.69.194                github.global.ssl.fastly.net
 140.82.112.3                  gist.github.com
 185.199.108.153               github.io
-140.82.112.4                  github.com
+140.82.114.4                  github.com
 192.0.66.2                    github.blog
 140.82.114.6                  api.github.com
 185.199.108.133               raw.githubusercontent.com
@@ -51,29 +51,29 @@
 185.199.108.133               avatars0.githubusercontent.com
 185.199.108.133               avatars.githubusercontent.com
 140.82.112.9                  codeload.github.com
-52.216.226.112                github-cloud.s3.amazonaws.com
+54.231.200.121                github-cloud.s3.amazonaws.com
 52.217.164.49                 github-com.s3.amazonaws.com
-54.231.133.129                github-production-release-asset-2e65be.s3.amazonaws.com
+52.217.79.60                  github-production-release-asset-2e65be.s3.amazonaws.com
 52.216.134.83                 github-production-user-asset-6210df.s3.amazonaws.com
 52.217.105.188                github-production-repository-file-5c1aeb.s3.amazonaws.com
 185.199.108.153               githubstatus.com
 64.71.144.202                 github.community
 23.100.27.125                 github.dev
 140.82.112.22                 collector.github.com
-13.107.42.16                  pipelines.actions.githubusercontent.com
+13.107.43.16                  pipelines.actions.githubusercontent.com
 185.199.108.133               media.githubusercontent.com
 185.199.108.133               cloud.githubusercontent.com
 185.199.108.133               objects.githubusercontent.com
 
 
-# Update time: 2022-03-11T16:05:56+08:00
+# Update time: 2022-03-16T09:09:06+08:00
 # Update url: https://raw.hellogithub.com/hosts
 # Star me: https://github.com/521xueweihan/GitHub520
 # GitHub520 Host End
 
 ```
 
-上面内容会自动定时更新，保证最新有效。数据更新时间：2022-03-11T16:05:56+08:00（内容无变动不会更新）
+上面内容会自动定时更新，保证最新有效。数据更新时间：2022-03-16T09:09:06+08:00（内容无变动不会更新）
 
 - 文件：`https://raw.hellogithub.com/hosts`
 - JSON：`https://raw.hellogithub.com/hosts.json`
