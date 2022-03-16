@@ -1,3 +1,3 @@
-mkdir hosts
-cp hosts /hosts/hosts.txt
-cp hosts.json /hosts/hosts.json
+mkdir public
+cp hosts /public/hosts.txt
+cp hosts.json /public/hosts.json
