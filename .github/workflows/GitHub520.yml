@@ -37,7 +37,8 @@ jobs:
     - name: cpfiles
       shell: bash
       run: |
-          mkdir public
+          if [ ! -d "public" ]; then
+             mkdir -p public
           cp hosts public/hosts.txt
           cp hosts.json public/hosts.json
         
