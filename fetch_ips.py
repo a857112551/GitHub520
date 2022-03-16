@@ -92,7 +92,7 @@ def write_file(hosts_content: str, update_time: str):
 
 
 def write_host_file(hosts_content: str):
-    output_file_path = os.path.join(os.path.dirname(__file__), 'hosts')
+    output_file_path = os.path.join(os.path.dirname(__file__), 'hosts.txt')
     with open(output_file_path, "w") as output_fb:
         output_fb.write(hosts_content)
 
